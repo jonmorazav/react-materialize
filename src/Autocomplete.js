@@ -140,8 +140,8 @@ class Autocomplete extends Component {
           className={"autocomplete "+inputClassName}
           id={_id}
           onChange={this._onChange}
-          onFocus: {onFocus}
-          onBlur: {onBlur}
+          onFocus={onFocus}
+          onBlur={onBlur}
           type="text"
           value={this.state.value}
         />
