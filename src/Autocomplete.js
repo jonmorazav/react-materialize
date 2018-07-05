@@ -113,6 +113,9 @@ class Autocomplete extends Component {
       value,
       onChange,
       onAutocomplete,
+      onFocus,
+      onBlur,
+      inputClassName,
       ...props
     } = this.props;
 
@@ -134,9 +137,11 @@ class Autocomplete extends Component {
         {icon && this.renderIcon(icon, iconClassName)}
         <input
           placeholder={placeholder}
-          className="autocomplete"
+          className={"autocomplete "+inputClassName}
           id={_id}
           onChange={this._onChange}
+          onFocus: {onFocus}
+          onBlur: {onBlur}
           type="text"
           value={this.state.value}
         />
@@ -194,6 +199,9 @@ Autocomplete.propTypes = {
    * Function signature: (value) => ()
    */
   onAutocomplete: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  inputClassName: PropTypes.string,
   /**
    * The value of the input
    */
